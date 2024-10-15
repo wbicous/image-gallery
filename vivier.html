@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Scrolling Gallery</title>
+    
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+    
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .gallery-container {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .gallery {
+            height: 100%;
+        }
+
+        .image-wrapper {
+            height: calc(100% - 20px);
+            overflow: hidden;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+  <div class="gallery-container">
+    <div class="gallery responsive">
+        <div class="image-wrapper">
+            <img src="https://www.dropbox.com/scl/fi/6rqrzvi50bzj6p3i8laj5/photo_2024-10-14_21-44-04.jpg?rlkey=xrrxup6dot3fvbyeuum0bmino&st=zjhm66jt&dl=0" alt="Image 1">
+        </div>
+        <div class="image-wrapper">
+            <img src="https://www.dropbox.com/scl/fi/gcbyhclnvw64h1jf7dy5g/2.jpg?rlkey=9dp3mnl4qhlbqzkulemwg90ey&st=38ka5owy&dl=0" alt="Image 2">
+        </div>
+        <div class="image-wrapper">
+            <img src="https://www.dropbox.com/scl/fi/7vlvukmle5fwym4a6v354/3.jpg?rlkey=6vf5je7qqfa34x807nstuomoh&st=rmlx5izt&dl=0" alt="Image 3">
+        </div>
+        <div class="image-wrapper">
+            <img src="https://www.dropbox.com/scl/fi/7pxf4g4l4pivdu487teu6/4.jpg?rlkey=53du086jfgp3di122hgqkef2b&st=khy2uuvi&dl=0" alt="Image 4">
+        </div>
+        <div class="image-wrapper">
+            <img src="https://www.dropbox.com/scl/fi/sv6vkbja1frq2sahjkc6r/5.jpg?rlkey=3i4z5juapvl6wmbjx4dqlizya&st=us8pij61&dl=0" alt="Image 5">
+        </div>
+        <div class="image-wrapper">
+            <img src="https://www.dropbox.com/scl/fi/um5pg6nvwkk1e33lbgpwx/6.jpg?rlkey=r1bjd1lbyq0ywcvxzbg6beh8w&st=e2mvcm2q&dl=0" alt="Image 6">
+        </div>
+    </div>
+  </div>
+
+  <!-- jQuery (required by Slick) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Slick JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <!-- Your custom script -->
+  <script>
+    $(document).ready(function(){
+      $('.responsive').slick({
+        dots: false,
+        arrows: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: '0px',
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              centerPadding: '0px'
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              centerPadding: '0px'
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              centerPadding: '0px'
+            }
+          }
+        ]
+      });
+    });
+  </script>
+
+</body>
+</html>
